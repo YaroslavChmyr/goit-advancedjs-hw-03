@@ -7,7 +7,7 @@ export function searchRequest(searchQuery) {
     safesearch: 'true',
   });
 
-  const url = `https://pixabay.com/api?${searchParams}`;
+  const url = `https://pixabay.com/api/?${searchParams}`;
 
   document.querySelector('.loader').style.display = 'inline-block';
   document.querySelector('.gallery').style.display = 'none';

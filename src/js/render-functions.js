@@ -41,15 +41,13 @@ export function renderGallery(imgArray) {
 
   gallery.insertAdjacentHTML('beforeend', imageItems);
 
-  let lightbox = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-
-  lightbox.on('show.simplelightbox', function (event) {
-    event.preventDefault();
-  });
-
   lightbox.refresh();
 }
+
+let lightbox = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
+lightbox.on('show.simplelightbox');

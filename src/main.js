@@ -4,6 +4,7 @@ import { searchRequest } from './js/pixabay-api';
 import { renderGallery } from './js/render-functions';
 
 const form = document.querySelector('.search-form');
+const gallery = document.querySelector('.gallery');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -16,6 +17,7 @@ form.addEventListener('submit', event => {
       position: 'topRight',
       transitionIn: 'fadeInDown',
     });
+    gallery.innerHTML = '';
   } else {
     searchRequest(searchData)
       .then(hits => {
